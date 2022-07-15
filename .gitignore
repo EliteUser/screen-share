@@ -1,0 +1,4 @@
+/app-client/node_modules
+/server-client/node_modules
+/server-host/node_modules
+.idea
