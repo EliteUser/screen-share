@@ -20,5 +20,5 @@ const emitImage = async () => {
 (async () => {
   setInterval(async () => {
     await emitImage();
-  }, 1000);
+  }, 500);
 })();
