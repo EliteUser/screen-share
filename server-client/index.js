@@ -5,12 +5,12 @@ const { server } = require('./server');
 
 const emitImage = async () => {
   const imagePath = path.join(__dirname, 'pic.jpg');
-  const start = performance.now();
+  // const start = global.performance.now();
 
   const imgBuf = await screenshot({ format: 'png' });
   const resultImgBuf = await compressImage(imgBuf, imagePath);
 
-  console.log(performance.now() - start);
+  // console.log(global.performance.now() - start);
 
   server.emit('message', resultImgBuf);
 
@@ -20,5 +20,5 @@ const emitImage = async () => {
 (async () => {
   setInterval(async () => {
     await emitImage();
-  }, 500);
+  }, 1000);
 })();
